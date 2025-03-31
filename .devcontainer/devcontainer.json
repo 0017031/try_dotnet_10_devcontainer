@@ -1,0 +1,5 @@
+{
+  //"image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/dotnet/nightly/sdk:10.0.100-preview.3",
+  "features": {}
+}
