@@ -3,9 +3,8 @@
     "dockerfile": "./Dockerfile",
     "context": "."
   },
-  // "image": "mcr.microsoft.com/dotnet/nightly/sdk:10.0.100-preview.3",
-  // "onCreateCommand": "apt update && apt install xz-utils",
-  "updateContentCommand": "wget -O - https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz | tar xJf - -C /usr/local/share && echo 'source /usr/local/share/ble-nightly/ble.sh' >> ~/.bashrc && sed -i \"s/#force_co/force_co/g\" ~/.bashrc",
+  "remoteUser": "ubuntu",
+  "postCreateCommand": "dotnet tool install fantomas -g",
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {
       "version": "latest"
@@ -15,6 +14,7 @@
     "ghcr.io/devcontainers-extra/features/fd:1": {},
     "ghcr.io/devcontainers-extra/features/fzf:1": {}
   },
+
   "customizations": {
     "vscode": {
       "settings": {
